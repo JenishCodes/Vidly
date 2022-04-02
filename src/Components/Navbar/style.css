@@ -1,0 +1,138 @@
+.nav-bar{
+  z-index: 1000 !important;
+  background: rgb(26, 26, 26);
+  padding: 4px;
+}
+.s-btn{
+  padding: 12px;
+  border: none;
+  height: 48px;
+}
+.fa-search, .fa-user{
+  width: 24px;
+  height: 24px;
+  border: none;
+  color: #d1d0cf;
+}
+.fa-search:hover {
+  cursor: pointer;
+}
+.searchbar {
+  border: none;
+  background: transparent;
+  width: 100%;
+  outline: 0;
+  font-size: 16px;
+  padding-left: 10px;
+  color: #d1d0cf;
+  line-height: 1;
+  height: 100%;
+}
+.nav-bar form {
+  width: 60%;
+  height: 40px;
+}
+@media screen and (max-width: 767px){
+  .nav-bar form {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 575px){
+  .searchbar-container {
+    margin: 0 !important;
+    border: none !important;
+  }
+}
+.search:focus-within .suggestion-box {
+  display: block;
+}
+.search{
+  width: 100%;
+}
+.suggestion-box {
+  position: absolute;
+  z-index: 100;
+  background: #202020;
+  padding: 0 20px;
+  width: 100%;
+  border-radius: 5px;
+  display: none;
+  left: 0;
+  top: 110%;
+}
+.searchbar-container {
+  border-radius: 5px;
+  border: solid 1px;
+  justify-content: space-between;
+  display: flex;
+  align-self: center;
+  transition: all 0.5s;
+  position: relative;
+}
+#dropdown1 {
+  background-color: transparent;
+  border: 0px;
+  font-size: 15px;
+  border-right: solid 1px #d1d0cf;
+  text-align: center;
+  color: #d1d0cf;
+}
+.email{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 20ch;
+}
+#dropdown2::after{
+  display: none;
+}
+.sug-cast{
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.avatar-text{
+  background: url("../../Images/texture.jpg");
+  color: #141414;
+  width: 40px;
+  height: 40px;
+  
+}
+.dropdown-item{
+  color:#d1d0cf;
+  cursor: pointer;
+}
+.dropdown-menu {
+  background-color: black;
+}
+button[type="button"]{
+  border-radius: 5px 0px 0px 5px;
+}
+button {
+  border: none;
+  background-color: inherit;
+  transition: 0.1s;
+}
+.dropdown-item:hover{
+  color: #d1d0cf;
+}
+.dropdown-item:hover, button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.nav-heading{
+  height: 48px;
+}
+.nav-title {
+  font-family: "Playfair Display", serif;
+  background: url("../../Images/texture.jpg");
+  background-repeat: repeat-x;
+  background-position: 100% 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-font-smoothing: antialiased;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sug-movie{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
