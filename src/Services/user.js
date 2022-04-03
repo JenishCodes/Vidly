@@ -1,7 +1,8 @@
 import { store, auth } from "./firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 
-const api = process.env.REACT_APP_SERVER_API;
+// const api = process.env.REACT_APP_SERVER_API;
+const api = "https://server-vidly.herokuapp.com"
 
 export async function updateHistory(id, history) {
   try {

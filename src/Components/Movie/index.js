@@ -1,4 +1,5 @@
 import React, { useContext, useRef } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../context";
 import { updateHistory } from "../../Services/user";
 import "./style.css";
@@ -16,12 +17,19 @@ export default function Movie({ data }) {
       >
         <div className="container position-relative h-100">
           <div className="slider-inner h-100">
-            <div className="row flex-column-reverse flex-md-row ">
-              <div className="col-xl-6 col-lg-6 col-md-7">
-                <h1 className="slider-text big-title title text-uppercase">
-                  {data.title}
-                </h1>
-                <div className="d-flex justify-content-between">
+            <div className="row">
+              <h1 className="slider-text big-title title mb-4 text-uppercase">
+                {data.title}
+              </h1>
+              <div className="col-xl-7 col-lg-8 col-md-9 col-sm-10 col-12">
+                <div className="d-flex justify-content-between align-items-center">
+                  {data.score ? (
+                    <div className="text-primary">
+                      <h4 className="tool-tip-text">
+                        {Math.round(data.score * 100)}%
+                      </h4>
+                    </div>
+                  ) : null}
                   <div className="d-flex">
                     <i className="fa fa-star me-1"></i>
                     <h5>{data.rating}</h5>
@@ -55,19 +63,32 @@ export default function Movie({ data }) {
                   data-animation-in="fadeInUp"
                   data-delay-in="1.2"
                 >
-                  <div
-                    onClick={() => {
-                      if (user) {
-                        updateHistory(data.id, user.history)
-                          .then((history) => setUser({ ...user, history }))
-                          .catch((err) => console.log(err));
-                      }
-                      trailer.current.style.display = "block";
-                    }}
-                    className="btn btn-hover iq-button"
-                  >
-                    <i className="fa fa-play me-3"></i>Play Now
-                  </div>
+                  {data.score ? (
+                    <div className="d-flex align-items-center p-0">
+                      <Link
+                        to={"/movie/" + data.id}
+                        className="btn btn-hover me-2"
+                        tabIndex="0"
+                      >
+                        <i className="fa fa-play me-2"></i> Watch Trailer
+                      </Link>
+                    </div>
+                  ) : (
+                      <div
+                        onClick={() => {
+                          if (user) {
+                            updateHistory(data.id, user.history)
+                              .then((history) => setUser({ ...user, history }))
+                              .catch((err) => console.log(err));
+                          }
+                          trailer.current.style.display = "block";
+                        }}
+                        className="btn btn-hover iq-button"
+                      >
+                        <i className="fa fa-play me-3"></i>Play Now
+                      </div>
+                      
+                  )}
                 </div>
               </div>
             </div>

@@ -11,8 +11,8 @@ export default function Card({ data, show, tip }) {
         backgroundImage: `url(${
           show ? data.poster : data.poster.replace("342", "185")
         })`,
-        width: show ? "266px" : "195px",
-        height: show ? "399px" : "290px",
+        width: show ? "250px" : "195px",
+        height: show ? "375px" : "290px",
       }}
     >
       <h4 className="card_title">
@@ -68,10 +68,10 @@ export default function Card({ data, show, tip }) {
         <div className="card_rating">
           {data.rating} <i className="fa fa-star" />
         </div>
-        <Link to={"https://imdb.com/title/" + data.id} className="card_button" target="blank">
+        <a href={"https://imdb.com/title/" + data.id} className="card_button" target="_blank">
           {" "}
           IMDb{" "}
-        </Link>
+        </a>
       </div>
     </div>
   ) : null;

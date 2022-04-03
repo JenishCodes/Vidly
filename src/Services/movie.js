@@ -1,4 +1,5 @@
-const api = process.env.REACT_APP_SERVER_API;
+// const api = process.env.REACT_APP_SERVER_API;
+const api = "https://server-vidly.herokuapp.com"
 
 export async function getMovieRecommendations(type, input) {
   try {

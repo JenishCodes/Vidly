@@ -124,8 +124,8 @@ export default function Navbar() {
                                     <div className="flex-grow-1 sug-cast">
                                       {movie.cast}
                                     </div>
-                                    <Link
-                                      to={"https://imdb.com/title/" + movie.id}
+                                    <a
+                                      href={"https://imdb.com/title/" + movie.id}
                                       style={{
                                         opacity: 1,
                                         transform: "scale(1)",
@@ -135,7 +135,7 @@ export default function Navbar() {
                                     >
                                       {" "}
                                       IMDb{" "}
-                                    </Link>
+                                    </a>
                                   </div>
                                 </div>
                               </div>

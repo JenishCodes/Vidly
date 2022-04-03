@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Slick from "react-slick";
+import Movie from "../Movie";
 import "./style.css";
 
 export default function RecommandationSlider(props) {
@@ -31,7 +32,7 @@ export default function RecommandationSlider(props) {
                   centerPadding={0}
                   slidesToScroll={1}
                   slidesToShow={5}
-                  className="list-inline p-0 mb-0 row align-items-center"
+                  className="list-inline p-0 mb-4 row align-items-center"
                   prevArrow={
                     <div className="slick-arrow slick-prev pointer">
                       <i className="fa fa-chevron-left"></i>
@@ -42,7 +43,7 @@ export default function RecommandationSlider(props) {
                       <i className="fa fa-chevron-right"></i>
                     </div>
                   }
-                  beforeChange={(curr, next)=>setCurrentMovie(movies[next])}
+                  beforeChange={(curr, next) => setCurrentMovie(movies[next])}
                   responsive={[
                     {
                       breakpoint: 1200,
@@ -65,13 +66,6 @@ export default function RecommandationSlider(props) {
                         slidesToScroll: 1,
                       },
                     },
-                    {
-                      breakpoint: 424,
-                      settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                      },
-                    },
                   ]}
                 >
                   {movies
@@ -89,80 +83,7 @@ export default function RecommandationSlider(props) {
                       ))
                     : null}
                 </Slick>
-                {currentMovie ? (
-                  <div className="tranding-block">
-                    <div
-                      className="tranding-background"
-                      style={{
-                        backgroundImage: `url(${currentMovie.backdrop})`,
-                      }}
-                    ></div>
-                    <div className="trending-content">
-                      <div
-                        id="trending-data1"
-                        className="overview-tab tab-pane fade active show"
-                      >
-                        <div className="trending-info align-items-center w-100 animated fadeInUp justify-content-between">
-                          <h2 className="trending-text big-title text-uppercase">
-                            {currentMovie.title}
-                          </h2>
-                          <div className="d-flex justify-content-between w-data align-items-center">
-                            <div className="text-primary">
-                              <h4 className="tool-tip-text">
-                                {Math.round(currentMovie.score * 100)}%
-                              </h4>
-                            </div>
-                            <div className="d-flex">
-                              <i className="fa fa-star me-1"></i>
-                              <h5>{currentMovie.rating}</h5>
-                            </div>
-                            <div>
-                              <h5>{currentMovie.year}</h5>
-                            </div>
-                            <div>
-                              <h5>{currentMovie.duration} min</h5>
-                            </div>
-                          </div>
-                          <p className="trending-dec">
-                            {currentMovie.description}
-                          </p>
-                          <div className="p-btns">
-                            <div className="d-flex align-items-center p-0">
-                              <Link
-                                to={"/movie/" + currentMovie.id}
-                                className="btn btn-hover me-2"
-                                tabIndex="0"
-                              >
-                                <i className="fa fa-play me-2"></i> Watch
-                                Trailer
-                              </Link>
-                            </div>
-                          </div>
-                          <div className="trending-list mt-4">
-                            <div className="text-primary title">
-                              Director:{" "}
-                              <span className="text-body">
-                                {currentMovie.director}
-                              </span>
-                            </div>
-                            <div className="text-primary title">
-                              Starring:{" "}
-                              <span className="text-body">
-                                {currentMovie.cast}
-                              </span>
-                            </div>
-                            <div className="text-primary title">
-                              Genres:{" "}
-                              <span className="text-body">
-                                {currentMovie.genres}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ) : null}
+                {currentMovie ? <Movie data={currentMovie} /> : null}
               </div>
             ) : (
               <div className="text-center text-secondary">

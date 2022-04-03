@@ -70,6 +70,13 @@ export default function SmallSlider({ movies, title, url }) {
                       slidesToScroll: 1,
                     },
                   },
+                  {
+                    breakpoint: 420,
+                    settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1,
+                    },
+                  },
                 ]}
               >
                 {movies

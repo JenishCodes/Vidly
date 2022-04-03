@@ -3,7 +3,7 @@ a {
   color: inherit;
 }
 .big-card {
-  margin: 15px 5px;
+  margin: 15px auto;
   padding: 20px 5px;
   display: flex;
   flex-direction: column;
@@ -111,13 +111,12 @@ a {
   color: gold;
   display: inline-block;
 }
-.movie-details{
+.movie-details {
   width: calc(100% - 50px);
 }
-.sug-movie-title{
+.sug-movie-title {
   text-overflow: ellipsis;
   overflow: hidden;
-  
 }
 .card_button {
   width: 60px;

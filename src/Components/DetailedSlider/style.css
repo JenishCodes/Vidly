@@ -59,7 +59,6 @@ a {
   transition: all 0.5s ease-out 0s;
 }
 
-/* ******************** slider main **************** */
 .iq-main-slider {
   position: relative;
 }
@@ -134,8 +133,6 @@ a.text-primary:hover {
   color: #0f79af !important;
 }
 
-/* responsiveness *********************** */
-
 @media (min-width: 1499px) {
   p {
     margin: 32px 0px;
@@ -177,7 +174,6 @@ a.text-primary:hover {
   }
 }
 
-/* ******************************** */
 .main-content {
   padding-top: 40px;
 }
@@ -191,7 +187,6 @@ a.text-primary:hover {
   font-size: 14px;
 }
 
-/* **************************************** */
 .slick-arrow,
 .trending-contens .slick-arrow {
   display: flex;

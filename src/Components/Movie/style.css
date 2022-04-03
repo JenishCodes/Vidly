@@ -39,8 +39,7 @@ p {
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(20, 20, 20, 1) 35%,
-    rgba(83, 100, 141, 0) 100%
+    rgba(0, 0, 0, 0.5) 100%
   );
   width: 100%;
   z-index: -1;
@@ -80,7 +79,7 @@ h5,
 }
 .slick-bg .btn {
   outline: medium none;
-  padding: 9px 30px;
+  padding: 9px 20px;
   position: relative;
   display: inline-block;
   border-radius: 0 !important;
@@ -186,6 +185,7 @@ a.text-primary:hover {
   h1.slider-text {
     line-height: 62px;
     margin: 0;
+    font-size: 30px;
   }
   p {
     margin: 22px 0;
@@ -204,8 +204,7 @@ a.text-primary:hover {
     background: linear-gradient(
       -360deg,
       rgba(0, 0, 0, 1) 0%,
-      rgba(20, 20, 20, 1) 20%,
-      rgba(83, 100, 141, 0) 100%
+      rgba(0, 0, 0, 0.5) 100%
     ) !important;
   }
   .play-button i {
