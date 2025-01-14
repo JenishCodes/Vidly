@@ -1,8 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
 import List from "./Pages/list";
-import SignIn from "./Pages/signin";
 import SignUp from "./Pages/signup";
+import SignIn from "./Pages/signin";
 import Search from "./Pages/search";
 import Home from "./Pages/home";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
