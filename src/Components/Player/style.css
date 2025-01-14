@@ -30,3 +30,8 @@
   position: relative;
   background-color: rgba(0, 0, 0, 0.2);
 }
+
+.go-back-icon {
+  left: 32px;
+  font-size: 32px;
+}

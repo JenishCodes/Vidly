@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import { useAuth } from "./AuthContext";
 import { Layout } from "antd";
+
+import { useAuth } from "./AuthContext";
 import Navbar from "./Components/Navbar";
 import MovieModal from "./Components/Modal";
 import Player from "./Components/Player";
@@ -44,12 +45,17 @@ function ProtectedRoute({ children }) {
   };
 
   return isUserSignedIn ? (
-    <MovieContext.Provider value={{ setMovie, updateCurrentPlaying, setIsProfileOpen }}>
+    <MovieContext.Provider
+      value={{ setMovie, updateCurrentPlaying, setIsProfileOpen }}
+    >
       <Layout className="layout">
         <Navbar />
         <div className="flex-grow">{children}</div>
         <MovieModal movie={movie} setMovie={setMovie} />
-        <Profile isProfileOpen={isProfileOpen} setIsProfileOpen={setIsProfileOpen} />
+        <Profile
+          isProfileOpen={isProfileOpen}
+          setIsProfileOpen={setIsProfileOpen}
+        />
         <Footer />
       </Layout>
       <Player

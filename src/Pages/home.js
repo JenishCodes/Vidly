@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+
 import MovieCarousel from "../Components/Carousel";
 import Slide from "../Components/Slider";
 import { getTrendingMovies } from "../Services/movie";

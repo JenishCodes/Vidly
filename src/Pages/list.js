@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+
 import MovieCard from "../Components/Card";
 import { getWatchListMovies } from "../Services/user";
 import "./style.css";
@@ -19,20 +20,17 @@ export default function List() {
   }, []);
 
   return (
-    <div className="list" style={{ paddingTop: "5rem" }}>
-      <div
-        className="position-relative flex"
-        style={{
-          gap: "1.5em",
-          padding: "0 60px",
-          margin: "2em 0",
-        }}
-      >
-        {watchListLoading
-          ? [...Array(5)].map((_, i) => <MovieCard key={i} />)
-          : watchList?.length > 0
-          ? watchList.map((m, i) => <MovieCard key={i} movie={m} />)
-          : <div className="empty-list">You haven't added any movies to your watchlist.</div>}
+    <div className="list">
+      <div className="position-relative d-flex">
+        {watchListLoading ? (
+          [...Array(5)].map((_, i) => <MovieCard key={i} />)
+        ) : watchList?.length > 0 ? (
+          watchList.map((m, i) => <MovieCard key={i} movie={m} />)
+        ) : (
+          <div className="empty-list">
+            You haven't added any movies to your watchlist.
+          </div>
+        )}
       </div>
     </div>
   );

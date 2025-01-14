@@ -1,8 +1,9 @@
-import { Divider, Modal, notification } from "antd";
 import React, { useContext, useEffect, useState } from "react";
-import "./style.css";
+import { Divider, Modal, notification } from "antd";
+
 import { clearWatchHistory, getUserInfo } from "../../Services/user";
 import { AuthContext } from "../../AuthContext";
+import "./style.css";
 
 export default function Profile({ isProfileOpen, setIsProfileOpen }) {
   const { signout } = useContext(AuthContext);
@@ -26,9 +27,7 @@ export default function Profile({ isProfileOpen, setIsProfileOpen }) {
 
   const handleClearHistory = () => {
     clearWatchHistory()
-      .then(() =>
-        notification.success({ message: "History cleared." })
-      )
+      .then(() => notification.success({ message: "History cleared." }))
       .catch((err) =>
         notification.error({
           message: err.message,

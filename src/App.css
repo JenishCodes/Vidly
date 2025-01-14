@@ -11,25 +11,11 @@ body {
   min-height: 100vh;
 }
 
-.content {
-  background-color: inherit;
-  min-height: 1000px;
-  position: relative;
-  z-index: 0;
-}
 .home {
   margin-top: -70px;
 }
 
-.footer {
-  background-color: inherit;
-  color: grey;
-  margin: 20px auto 0;
-  max-width: 980px;
-  padding: 0 4%;
-}
-
-.flex {
+.d-flex {
   display: flex !important;
 }
 
@@ -54,7 +40,7 @@ body {
 }
 
 .h-100 {
-  height: 100% !important; 
+  height: 100% !important;
 }
 
 .position-absolute {
@@ -68,12 +54,12 @@ body {
   justify-content: end;
 }
 
-.login-btn {
+.submit-btn {
   background: rgb(229, 9, 20);
   cursor: pointer;
 }
 
-.login-btn:hover {
+.submit-btn:hover {
   background-color: rgb(193, 17, 25);
 }
 
@@ -118,20 +104,8 @@ body {
   cursor: pointer;
 }
 
-.d-grid {
-  display: grid;
-}
-
 .flex-wrap {
   flex-wrap: wrap;
-}
-
-.justify-content-stretch {
-  justify-content: stretch;
-}
-
-.align-item-stretch {
-  align-items: stretch;
 }
 
 .w-35 {
@@ -169,46 +143,66 @@ body {
   top: 0;
 }
 
-.fw-400{
+.fw-400 {
   font-weight: 400;
 }
 
-.fw-500{
+.fw-500 {
   font-weight: 500;
 }
 
-.td-none{
+.td-none {
   text-decoration: none;
 }
 
-.td-underline{
-  text-decoration: underline;
-}
-
-.fd-column{
+.fd-column {
   flex-direction: column;
 }
 
-.fw-700{
+.fw-700 {
   font-weight: 700;
 }
 
-.c-black{
+.c-black {
   color: black;
 }
 
-.bg-dark{
+.bg-dark {
   background-color: #141414;
 }
 
-.d-none{
+.d-none {
   display: none;
 }
 
-.ls-none{
+.ls-none {
   list-style: none;
 }
 
-.flex-grow{
+.flex-grow {
   flex-grow: 1;
+}
+
+.auth-layout .overlay {
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/81d64f3c-9627-4741-8f74-422bf35f9f1d/web/IN-en-20241104-TRIFECTA-perspective_55263ea2-af7f-40ed-9cf0-7029a9b9baf4_small.jpg");
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background-size: cover;
+  display: block;
+  opacity: 0.5;
+}
+
+.auth-layout .title {
+  margin-right: 25px;
+  margin: 0px 25px 0px 0px;
+  line-height: 1;
+  font-size: 48px;
+}
+
+.auth-layout .auth-header {
+  max-width: calc(83.33333333333334% - (3rem * 2));
+  padding: 1.5rem 3rem;
+  margin: auto;
 }

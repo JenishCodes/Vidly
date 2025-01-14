@@ -24,7 +24,10 @@ export async function getTrendingMovies(count = 10) {
 }
 
 export async function searchMovies(query, count = 10) {
-  const data = await callApi(movieApi + "/search?query=" + query + "&limit=" + count, "GET");
+  const data = await callApi(
+    movieApi + "/search?query=" + query + "&limit=" + count,
+    "GET"
+  );
 
   return data.movies;
 }
@@ -33,7 +36,11 @@ export async function getRelatedMovies(words, count = 10) {
   if (words.length < 3) return [];
 
   const data = await callApi(
-    movieApi + "/similar/search?query=" + words.replaceAll(" ", ",") + "&limit=" + count,
+    movieApi +
+      "/similar/search?query=" +
+      words.replaceAll(" ", ",") +
+      "&limit=" +
+      count,
     "GET"
   );
 

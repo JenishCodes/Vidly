@@ -1,14 +1,15 @@
-import "./App.css";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
 import List from "./Pages/list";
 import SignUp from "./Pages/signup";
 import SignIn from "./Pages/signin";
 import Search from "./Pages/search";
 import Home from "./Pages/home";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { AuthProvider } from "./AuthContext";
 import ProtectedRoute from "./ProtectedRoute";
 import ForgotPassword from "./Pages/forgot";
 import PublicRoute from "./PublicRoute";
+import "./App.css";
 
 function App() {
   return (

@@ -1,7 +1,8 @@
 import React from "react";
-import { Carousel, Skeleton } from "antd";
-import MovieCard from "../Card";
+import { Carousel } from "antd";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
+
+import MovieCard from "../Card";
 import "./style.css";
 
 export default function Slide({ title, movies }) {

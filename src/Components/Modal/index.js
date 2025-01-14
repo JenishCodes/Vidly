@@ -1,16 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./style.css";
 import { Divider, Modal, notification, Skeleton } from "antd";
-import MovieCard from "../Card";
 import {
   CaretRightOutlined,
   CheckOutlined,
   PlusOutlined,
   StarFilled,
 } from "@ant-design/icons";
+
+import MovieCard from "../Card";
 import { getSimilarMovies } from "../../Services/movie";
 import { updateWatchList } from "../../Services/user";
 import { MovieContext } from "../../ProtectedRoute";
+import "./style.css";
 
 export default function MovieModal({ movie, setMovie }) {
   const [isInWatchlist, setIsInWatchlist] = useState(false);
@@ -28,7 +29,7 @@ export default function MovieModal({ movie, setMovie }) {
       );
   };
 
-  useEffect(() => {    
+  useEffect(() => {
     setSimilarMovies([]);
     if (!movie) return;
 
@@ -49,7 +50,11 @@ export default function MovieModal({ movie, setMovie }) {
       >
         <div className="position-relative">
           <div className="img-wrapper">
-            <img className="modal-img w-100" alt="Movie Backdrop" src={movie.backdrop} />
+            <img
+              className="modal-img w-100"
+              alt="Movie Backdrop"
+              src={movie.backdrop}
+            />
           </div>
           <div className="img-overlay">
             <div className="img-detail">
@@ -58,7 +63,7 @@ export default function MovieModal({ movie, setMovie }) {
               </div>
               <div className="img-btns">
                 <button
-                  className="modal-play-btn flex justify-content-between align-item-center b-none c-pointer"
+                  className="modal-play-btn d-flex justify-content-between align-item-center b-none c-pointer"
                   onClick={() =>
                     updateCurrentPlaying(movie.id, movie.title, movie.trailer)
                   }
@@ -85,10 +90,10 @@ export default function MovieModal({ movie, setMovie }) {
           </div>
         </div>
         <div className="modal-detail-container">
-          <div className="modal-details flex">
+          <div className="modal-details d-flex">
             <div className="w-65">
-              <div className="modal-vals flex align-item-center">
-                <div className="modal-val flex align-item-center">
+              <div className="modal-vals d-flex align-item-center">
+                <div className="modal-val d-flex align-item-center">
                   <StarFilled />
                   <span className="card-rating-val">{movie.rating}</span>
                 </div>
@@ -130,7 +135,7 @@ export default function MovieModal({ movie, setMovie }) {
           </Divider>
 
           <div className="modal-similar">
-            <div className="modal-similar-grid flex flex-wrap justify-content-between">
+            <div className="modal-similar-grid d-flex flex-wrap justify-content-between">
               {similarMovies?.length > 0
                 ? similarMovies.map((movie) => (
                     <MovieCard key={movie.id} movie={movie} />

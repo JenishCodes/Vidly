@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./style.css";
+import { notification, Skeleton } from "antd";
 import {
   CheckOutlined,
   DownOutlined,
@@ -7,9 +7,10 @@ import {
   PlusOutlined,
   StarFilled,
 } from "@ant-design/icons";
+
 import { MovieContext } from "../../ProtectedRoute";
-import { notification, Skeleton } from "antd";
 import { updateWatchList } from "../../Services/user";
+import "./style.css";
 
 export default function MovieCard({ movie, onClick }) {
   const { setMovie, updateCurrentPlaying } = useContext(MovieContext);
@@ -43,7 +44,7 @@ export default function MovieCard({ movie, onClick }) {
       <div className="card-bg"></div>
       <div className="card-detail-container">
         <div className="card-detail">
-          <div className="card-btns flex w-100 justify-content-end">
+          <div className="card-btns d-flex w-100 justify-content-end">
             <PlayCircleFilled
               className="card-play-btn"
               onClick={() => handleClick(handlePlay)}
@@ -64,11 +65,11 @@ export default function MovieCard({ movie, onClick }) {
               className="card-datail-btn"
             />
           </div>
-          <div className="card-stats flex">
+          <div className="card-stats d-flex">
             <span className="card-duration">
               {Math.floor(movie.runtime / 60)}h {movie.runtime % 60}m
             </span>
-            <div className="flex">
+            <div className="d-flex">
               <StarFilled />
               <span className="card-rating-val">{movie.rating}</span>
             </div>

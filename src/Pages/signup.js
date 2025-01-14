@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
+
 import { AuthContext } from "../AuthContext";
+import "./style.css";
 
 export default function SignUp() {
   const { signup } = useContext(AuthContext);
@@ -18,86 +20,36 @@ export default function SignUp() {
 
   return (
     <div className="signup">
-      <div style={{ margin: "50px auto", maxWidth: "450px", padding: "0 5%" }}>
-        <div
-          style={{
-            padding: "48px 68px",
-            backgroundColor: "rgba(0,0,0,0.7)",
-            borderRadius: "4px",
-          }}
-        >
+      <div>
+        <div className="form-container">
           <header>
-            <h1
-              className="fw-700 c-white"
-              style={{
-                margin: "0 0 28px 0",
-                fontSize: "2rem",
-              }}
-            >
-              Join Vidly
-            </h1>
+            <h1 className="fw-700 c-white form-header">Join Vidly</h1>
           </header>
-          <form className="flex fd-column" style={{ gap: "16px" }}>
-            <div
-              style={{
-                padding: "1rem",
-                border: "solid 1px rgba(128,128,128,0.7)",
-                borderRadius: "0.25rem",
-                minWidth: "12.5rem",
-                background: "rgba(22,22,22,0.7)",
-                outline: "solid 2px white",
-              }}
-            >
+          <form className="form d-flex fd-column">
+            <div className="form-field">
               <input
                 className="o-none b-none bg-transparent c-white"
                 type="text"
-                style={{
-                  fontSize: "1rem",
-                }}
                 placeholder="Name"
                 disabled={loading}
                 value={name}
                 onChange={(e) => setName(e.currentTarget.value)}
               />
             </div>
-            <div
-              style={{
-                padding: "1rem",
-                border: "solid 1px rgba(128,128,128,0.7)",
-                borderRadius: "0.25rem",
-                minWidth: "12.5rem",
-                background: "rgba(22,22,22,0.7)",
-                outline: "solid 2px white",
-              }}
-            >
+            <div className="form-field">
               <input
                 className="o-none b-none bg-transparent c-white"
                 type="email"
-                style={{
-                  fontSize: "1rem",
-                }}
                 placeholder="Email or mobile number"
                 disabled={loading}
                 value={email}
                 onChange={(e) => setEmail(e.currentTarget.value)}
               />
             </div>
-            <div
-              style={{
-                padding: "1rem",
-                border: "solid 1px rgba(128,128,128,0.7)",
-                borderRadius: "0.25rem",
-                minWidth: "12.5rem",
-                background: "rgba(22,22,22,0.7)",
-                outline: "solid 2px white",
-              }}
-            >
+            <div className="form-field">
               <input
                 className="o-none b-none bg-transparent c-white"
                 type="password"
-                style={{
-                  fontSize: "1rem",
-                }}
                 placeholder="Password"
                 disabled={loading}
                 value={password}
@@ -105,24 +57,15 @@ export default function SignUp() {
               />
             </div>
             <button
-              className="login-btn b-none fw-500 c-white"
-              style={{
-                fontSize: "1rem",
-                minHeight: "2.5rem",
-                padding: "0.375rem 1rem",
-                borderRadius: "0.25rem",
-                transitionTimingFunction: "cubic-bezier(0.32,0.94,0.6,1)",
-                transitionDuration: "250ms",
-                transitionProperty: "background-color,border-color",
-              }}
+              className="submit-btn b-none fw-500 c-white"
               disabled={loading}
               onClick={handleSignUp}
             >
               Join Now
             </button>
           </form>
-          <footer style={{ marginTop: "20px" }}>
-            <p style={{ color: "rgba(255,255,255,0.7)" }}>
+          <footer className="form-footer">
+            <p>
               Already a memeber?{" "}
               <a className="fw-500 c-white td-none" href="/signin">
                 Sign in.

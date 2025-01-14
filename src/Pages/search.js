@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import MovieCard from "../Components/Card";
+import { useLocation } from "react-router-dom";
 import { Divider } from "antd";
+
 import {
   getRelatedMovies,
   searchMovies,
   updateMovieSearchScore,
 } from "../Services/movie";
-import { useLocation } from "react-router-dom";
+import MovieCard from "../Components/Card";
+import "./style.css";
 
 export default function Search() {
   const uri = useLocation();
@@ -31,33 +33,19 @@ export default function Search() {
         getRelatedMovies(query, 10).then(setRelatedMovies);
       }, 1000)
     );
-  }, [query]);
+  }, [query, debounceTimeout]);
 
   return (
-    <div className="search" style={{ padding: "0 60px" }}>
-      <div style={{ marginBottom: "4rem" }}>
+    <div className="search">
+      <div>
         <div>
-          <div
-            className="flex w-100  align-item-center"
-            style={{
-              height: "68px",
-            }}
-          >
-            <h1
-              className="l-height-1 c-white fw-400"
-              style={{
-                marginRight: "25px",
-                margin: "0px 25px 0px 0px",
-              }}
-            >
+          <div className="search-header d-flex w-100  align-item-center">
+            <h1 className="search-title l-height-1 c-white fw-400">
               Search results for "{query}"
             </h1>
           </div>
         </div>
-        <div
-          className="search-results flex justify-content-between"
-          style={{ gap: "2em" }}
-        >
+        <div className="search-results d-flex justify-content-between">
           {foundMovies?.length > 0
             ? foundMovies.map((m, i) => (
                 <MovieCard
@@ -71,22 +59,10 @@ export default function Search() {
       </div>
 
       <div>
-        <Divider
-          className="c-white"
-          orientation="center"
-          style={{
-            borderColor: "rgba(179,179,179,0.2)",
-            fontSize: "28px",
-          }}
-        >
+        <Divider className="c-white divider" orientation="center">
           Movies related to "{query}"
         </Divider>
-        <div
-          className="search-recommendations flex flex-wrap w-100 justify-content-between"
-          style={{
-            gap: "2.5em",
-          }}
-        >
+        <div className="search-recommendations d-flex flex-wrap w-100 justify-content-between">
           {relatedMovies?.length > 0
             ? relatedMovies.map((m, i) => <MovieCard key={i} movie={m} />)
             : [...Array(5)].map((_, i) => <MovieCard key={i} />)}

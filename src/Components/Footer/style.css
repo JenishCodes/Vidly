@@ -1,12 +1,25 @@
-.ant-popover-inner{
-    background-color: rgba(255, 255, 255, 0.9) !important;
-  }
-
-.social-icon{
-    font-size: 24px;
-    color: #222;
+.ant-popover-inner {
+  background-color: rgba(255, 255, 255, 0.8) !important;
 }
 
-.social-icon:hover{
-    color: #000;
+.footer {
+  background-color: inherit;
+  color: grey;
+  margin: 20px auto;
+  max-width: 980px;
+  padding: 0 4%;
+  font-size: 12px,
+}
+
+.social-icon-wrapper {
+  margin: 0px 7px;
+}
+
+.social-icon {
+  font-size: 24px;
+  color: #333;
+}
+
+.social-icon:hover {
+  color: #000;
 }

@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
-import "./style.css";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Modal } from "antd";
+
+import "./style.css";
 
 export default function Player({ currentPlaying, updateCurrentPlaying }) {
   const frame = useRef(null);
@@ -17,8 +18,7 @@ export default function Player({ currentPlaying, updateCurrentPlaying }) {
     >
       <div className="controllers h-100 w-100">
         <ArrowLeftOutlined
-          className="position-absolute"
-          style={{ left: "32px", fontSize: "32px" }}
+          className="position-absolute go-back-icon"
           onClick={() => {
             updateCurrentPlaying(null, null, null);
             frame.current.src = "";
@@ -29,6 +29,7 @@ export default function Player({ currentPlaying, updateCurrentPlaying }) {
       <iframe
         src={currentPlaying?.trailer + "?autoplay=1&controls=0&rel=0"}
         ref={frame}
+        title="Movie"
         frameborder="0"
       ></iframe>
     </Modal>

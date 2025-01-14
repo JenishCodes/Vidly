@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import "./style.css";
-import { CloseOutlined, SearchOutlined, UserOutlined } from "@ant-design/icons";
+import { SearchOutlined, UserOutlined } from "@ant-design/icons";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+
 import { MovieContext } from "../../ProtectedRoute";
+import "./style.css";
 
 export default function Navbar() {
   const { setIsProfileOpen } = useContext(MovieContext);
@@ -31,16 +32,16 @@ export default function Navbar() {
     if (query) path = "/search?q=" + query;
 
     navigate(path);
-  }, [query]);
+  }, [query, navigate]);
 
   return (
     <div
       className={scrolled ? "header main-header scroll" : "main-header header"}
     >
-      <div className="flex aling-item-center w-100 navbar">
+      <div className="d-flex aling-item-center w-100 navbar">
         <h1 className="navbar-title">Vidly</h1>
-        <ul className="navbar-list flex m-0 p-0 align-item-center">
-          <li className="ls-none" style={{ marginLeft: "20px" }}>
+        <ul className="navbar-list d-flex m-0 p-0 align-item-center">
+          <li className="nav-item ls-none">
             <Link
               className={uri.pathname === "/" ? "c-white fw-700" : "c-white"}
               to="/"
@@ -48,7 +49,7 @@ export default function Navbar() {
               Home
             </Link>
           </li>
-          <li className="ls-none" style={{ marginLeft: "20px" }}>
+          <li className="nav-item ls-none">
             <Link
               className={
                 uri.pathname === "/my-list" ? "c-white fw-700" : "c-white"
@@ -59,14 +60,14 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
-        <div className="navbar-btns flex aling-item-center justify-content-center position-absolute">
-          <div className="l-hieght-1" style={{ marginRight: "15px" }}>
-            <div className="search-bar flex aling-item-center c-white">
+        <div className="navbar-btns d-flex aling-item-center justify-content-center position-absolute">
+          <div className="l-hieght-1 nav-icon-item">
+            <div className="search-bar d-flex aling-item-center c-white">
               <button
                 onClick={() => searchBox.current.focus()}
                 className="search-btn o-none b-none"
               >
-                <SearchOutlined style={{ fontSize: "24px" }} />
+                <SearchOutlined className="nav-icon" />
               </button>
               <div>
                 <input
@@ -81,13 +82,10 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-          <div
-            className="l-height-1"
-            style={{ marginRight: "15px", color: "white" }}
-          >
+          <div className="l-height-1 c-white nav-icon-item">
             <UserOutlined
+              className="nav-icon"
               onClick={() => setIsProfileOpen(true)}
-              style={{ fontSize: "24px" }}
             />
           </div>
         </div>
@@ -99,22 +97,8 @@ export default function Navbar() {
             : "position-relative bg-dark d-none"
         }
       >
-        <div
-          className="position-absolute bg-inherit flex align-item-center w-100 top-0"
-          style={{
-            height: "68px",
-            zIndex: 2,
-          }}
-        >
-          <h1
-            className="c-white l-height-1 fw-400"
-            style={{
-              marginRight: "25px",
-              margin: "0px 25px 0px 0px",
-            }}
-          >
-            My List
-          </h1>
+        <div className="sub-navbar position-absolute bg-inherit d-flex align-item-center w-100 top-0">
+          <h1 className="c-white l-height-1 fw-400 sub-nav-item">My List</h1>
         </div>
       </div>
     </div>
