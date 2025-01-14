@@ -1,0 +1,129 @@
+.ant-modal {
+  top: 2em !important;
+}
+
+.modal-title {
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.ant-modal-content {
+  border-radius: 5px !important;
+  padding: 0 0 4em 0 !important;
+  background-color: #181818 !important;
+  color: #b3b3b3 !important;
+}
+
+.img-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(0deg, #181818, transparent 50%);
+}
+
+.img-detail {
+  position: absolute;
+  bottom: 5%;
+  width: 60%;
+  left: 3em;
+}
+
+.img-btns {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  min-height: 2em;
+}
+
+.ant-modal-close {
+  border-radius: 50% !important;
+  color: white !important;
+  font-size: 40px !important;
+  background-color: #181818 !important;
+}
+
+.modal-play-btn {
+  font-size: 22px;
+  margin: 4px;
+  padding: 0.4rem 2rem 0.4rem 1.6rem;
+  border-radius: 4px;
+}
+
+.modal-play-btn-icon {
+  font-size: 28px;
+}
+
+.modal-watchlist-btn {
+  margin: 0 5px;
+}
+
+.modal-watchlist-btn-icon {
+  font-size: 22px;
+  border: solid 2px #bbb;
+  padding: 7px;
+}
+
+.modal-similar-grid {
+  gap: 1.5em 1em;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.modal-property {
+  margin: 0.5em 0;
+}
+
+.modal-desc {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.modal-val {
+  margin: 0 10px;
+}
+
+.modal-vals {
+  margin: 0.8em 0;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.modal-details {
+  gap: 2em;
+}
+
+.modal-divider {
+  font-size: 24px !important;
+}
+
+.modal-title-container {
+  margin: 0 0 1.5em 0;
+}
+
+.modal-img {
+  border-radius: 5px;
+}
+
+.modal-space {
+  height: 20px;
+}
+
+.modal-detail-container {
+  padding: 0 3em 1em 3em;
+}
+
+.card-skeleton {
+  width: 230px !important;
+  height: 350px !important;
+  background-color: #222;
+  border-radius: 0.3em;
+}
+
+.modal-imdb {
+  padding: 3px 6px;
+  border-radius: 3px;
+}
+
+.modal-imdb-link:hover {
+  color: black;
+}

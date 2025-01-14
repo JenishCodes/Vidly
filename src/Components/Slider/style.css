@@ -1,0 +1,26 @@
+.slider {
+  margin: 100px 0px;
+}
+
+.dots {
+  bottom: -24px !important;
+}
+
+.slide {
+  padding: 0 1.25vw;
+}
+
+.slider-slide-skeleton > .ant-skeleton-image {
+  background: rgba(179, 179, 179, 0.2) !important;
+  height: 350px !important;
+  width: 230px !important;
+}
+
+.slider-slide-skeleton {
+  width: 20% !important;
+  text-align: center;
+}
+
+.slider-title{
+  padding: 0 60px;
+}
