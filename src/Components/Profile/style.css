@@ -10,6 +10,19 @@
   margin: 16px auto 16px auto;
 }
 
+.profile-img-skeleton{
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin: 16px auto;
+}
+
+.profile-img-skeleton > span {
+  width: 100px !important;
+  height: 100px !important;
+}
+
 .profile-img-text {
   text-align: center;
   color: #fff;

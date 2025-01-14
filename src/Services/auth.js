@@ -25,3 +25,19 @@ export async function signUp(name, email, password) {
 
   localStorage.setItem("token", data.token);
 }
+
+export async function sendMailOTP(email) {
+  const body = { email };
+
+  const data = await callApi(AUTH_ROUTE + "/otp", "POST", body);
+
+  if (data?.error) throw new Error(data.error);
+}
+
+export async function changePassword(email, OTP, password) {
+  const body = { email, OTP, password };
+
+  const data = await callApi(AUTH_ROUTE + "/password", "POST", body);
+
+  if (data?.error) throw new Error(data.error);
+}

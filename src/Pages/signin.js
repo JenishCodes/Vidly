@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { AuthContext } from "../AuthContext";
 import "./style.css";
@@ -54,16 +55,16 @@ export default function SignIn() {
             >
               Sign In
             </button>
-            <a className="login-forgot-pass m-auto" href="/forgot-password">
+            <Link className="login-forgot-pass m-auto" to="/forgot-password">
               Forgot Password?
-            </a>
+            </Link>
           </form>
           <footer className="form-footer">
             <p>
               New to Vidly?{" "}
-              <a href="/signup" className="c-white fw-500 td-none">
+              <Link to="/signup" className="c-white fw-500 td-none">
                 Sign up now.
-              </a>
+              </Link>
             </p>
           </footer>
         </div>

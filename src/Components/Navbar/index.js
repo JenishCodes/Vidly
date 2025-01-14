@@ -32,7 +32,7 @@ export default function Navbar() {
     if (query) path = "/search?q=" + query;
 
     navigate(path);
-  }, [query, navigate]);
+  }, [query]);
 
   return (
     <div

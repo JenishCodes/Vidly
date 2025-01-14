@@ -33,7 +33,7 @@ export default function Search() {
         getRelatedMovies(query, 10).then(setRelatedMovies);
       }, 1000)
     );
-  }, [query, debounceTimeout]);
+  }, [query]);
 
   return (
     <div className="search">
