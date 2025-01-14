@@ -1,13 +1,13 @@
 import { callApi } from "./util";
 
-const authApi = process.env.REACT_APP_API_URL + "/auth";
+const AUTH_ROUTE = "/auth";
 
 export async function signIn(email, password) {
-  const data = await callApi(authApi + "/signin", "POST", { email, password });
+  const body = { email, password };
 
-  if (data?.error) {
-    throw new Error(data.error);
-  }
+  const data = await callApi(AUTH_ROUTE + "/signin", "POST", body);
+
+  if (data?.error) throw new Error(data.error);
 
   localStorage.setItem("token", data.token);
 }
@@ -17,15 +17,11 @@ export function signOut() {
 }
 
 export async function signUp(name, email, password) {
-  const data = await callApi(authApi + "/signup", "POST", {
-    name,
-    email,
-    password,
-  });
+  const body = { name, email, password };
 
-  if (data?.error) {
-    throw new Error(data.error);
-  }
+  const data = await callApi(AUTH_ROUTE + "/signup", "POST", body);
+
+  if (data?.error) throw new Error(data.error);
 
   localStorage.setItem("token", data.token);
 }
